@@ -1,0 +1,16 @@
+version: '2'
+services:
+  viettel-app:
+    image: viettel
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://viettel-mssql:1433;database=Viettel
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+    ports:
+      - 8080:8080
+  viettel-mssql:
+    extends:
+      file: mssql.yml
+      service: viettel-mssql
