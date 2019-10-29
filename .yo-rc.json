@@ -1,44 +1,42 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.mycompany.app",
+      "packageName": "com.viettel.vn",
       "nativeLanguage": "en"
     },
     "jhipsterVersion": "6.4.1",
     "applicationType": "monolith",
     "baseName": "Viettel",
-    "packageName": "com.mycompany.app",
-    "packageFolder": "com/mycompany/app",
+    "packageName": "com.viettel.vn",
+    "packageFolder": "com/viettel/vn",
     "serverPort": "8080",
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
     "websocket": false,
     "databaseType": "sql",
-    "devDatabaseType": "mssql",
+    "devDatabaseType": "h2Disk",
     "prodDatabaseType": "mssql",
     "searchEngine": false,
     "messageBroker": false,
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "YWVkZmU4YzQ5OTU2MDUzM2M0MzAwMTU5NmFlZWQwODI3ZGQ3NTNiNjc2NWViM2MyMWYyN2YwZGNjZjdiNmVlNGFiNmQwYmJiYzI0Yjc5MDQwOGNiZDZjNzBjMzRhOGI0YWRlZGUxYTFlMjFkMTA1ZTg5Yzg5YWY4NjRiNjM4YzI=",
+    "jwtSecretKey": "NzllNTE4ZDM3ZDAyMGEzZTRmN2E1NWIxYzNlNDgwNDY3MzdkZGVmOTkyZmNhZWMyMzRiOTk4NDExYjEzM2E4YzNmMmQ4N2VhZmQ5NjE3ZWRjMmU2MzI4NzBmZTlhNmUzYTVmMGI2ZWExMDdkZGM4NTdlNjIwMjhlMTQ0MDM5NzE=",
     "embeddableLaunchScript": false,
     "useSass": true,
     "clientPackageManager": "npm",
     "clientFramework": "angularX",
-    "clientTheme": "none",
-    "clientThemeVariant": "",
-    "testFrameworks": [],
+    "clientTheme": "darkly",
+    "clientThemeVariant": "dark",
+    "testFrameworks": ["protractor"],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "languages": [
-      "en"
-    ],
+    "languages": ["en", "vi"],
     "blueprints": []
   }
 }

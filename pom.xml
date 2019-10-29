@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mycompany.app</groupId>
+    <groupId>com.viettel.vn</groupId>
     <artifactId>viettel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -59,6 +59,7 @@
         <liquibase-hibernate5.version>3.6</liquibase-hibernate5.version>
         <!-- The hibernate version to be used to override default version of liquibase maven plugin -->
         <hibernate-core.version>5.3.8.Final</hibernate-core.version>
+        <h2.version>1.4.199</h2.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <jaxb-runtime.version>2.3.2</jaxb-runtime.version>
         <archunit-junit5.version>0.11.0</archunit-junit5.version>
@@ -166,11 +167,13 @@
         </dependency>
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
+            <artifactId>sqljdbc41</artifactId>
+            <version>6.0</version>
         </dependency>
         <dependency>
             <groupId>com.github.sabomichal</groupId>
             <artifactId>liquibase-mssql</artifactId>
+            <version>1.4</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -576,12 +579,12 @@
                     <configuration>
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
-                        <driver></driver>
-                        <url>jdbc:sqlserver://localhost:1433;database=Viettel</url>
+                        <driver>org.h2.Driver</driver>
+                        <url>jdbc:h2:file:${project.build.directory}/h2db/db/viettel</url>
                         <defaultSchemaName></defaultSchemaName>
-                        <username>SA</username>
-                        <password>yourStrong(!)Password</password>
-                        <referenceUrl>hibernate:spring:com.mycompany.app.domain?dialect=org.hibernate.dialect.SQLServerDialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+                        <username>Viettel</username>
+                        <password></password>
+                        <referenceUrl>hibernate:spring:com.viettel.vn.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>
                         <contexts>!test</contexts>
@@ -611,6 +614,11 @@
                             <groupId>javax.validation</groupId>
                             <artifactId>validation-api</artifactId>
                             <version>${validation-api.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
                         </dependency>
                         <dependency>
                             <groupId>org.springframework</groupId>
@@ -819,6 +827,10 @@
                     <artifactId>spring-boot-devtools</artifactId>
                     <optional>true</optional>
                 </dependency>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                </dependency>
             </dependencies>
             <build>
                 <plugins>
@@ -879,6 +891,10 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-devtools</artifactId>
                     <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
                 </dependency>
             </dependencies>
             <properties>
@@ -1047,6 +1063,7 @@
                     <artifactId>spring-boot-starter-undertow</artifactId>
                 </dependency>
             </dependencies>
+
             <build>
                 <pluginManagement>
                     <plugins>
@@ -1104,3 +1121,4 @@
         <!-- jhipster-needle-maven-add-profile -->
     </profiles>
 </project>
+

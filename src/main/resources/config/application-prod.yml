@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     io.github.jhipster: INFO
-    com.mycompany.app: INFO
+    com.viettel.vn: INFO
 
 management:
   metrics:
@@ -113,7 +113,7 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: YWVkZmU4YzQ5OTU2MDUzM2M0MzAwMTU5NmFlZWQwODI3ZGQ3NTNiNjc2NWViM2MyMWYyN2YwZGNjZjdiNmVlNGFiNmQwYmJiYzI0Yjc5MDQwOGNiZDZjNzBjMzRhOGI0YWRlZGUxYTFlMjFkMTA1ZTg5Yzg5YWY4NjRiNjM4YzI=
+        base64-secret: NzllNTE4ZDM3ZDAyMGEzZTRmN2E1NWIxYzNlNDgwNDY3MzdkZGVmOTkyZmNhZWMyMzRiOTk4NDExYjEzM2E4YzNmMmQ4N2VhZmQ5NjE3ZWRjMmU2MzI4NzBmZTlhNmUzYTVmMGI2ZWExMDdkZGM4NTdlNjIwMjhlMTQ0MDM5NzE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
