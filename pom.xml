@@ -167,13 +167,11 @@
         </dependency>
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>sqljdbc41</artifactId>
-            <version>6.0</version>
+            <artifactId>mssql-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.sabomichal</groupId>
             <artifactId>liquibase-mssql</artifactId>
-            <version>1.4</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -1063,7 +1061,6 @@
                     <artifactId>spring-boot-starter-undertow</artifactId>
                 </dependency>
             </dependencies>
-
             <build>
                 <pluginManagement>
                     <plugins>
@@ -1121,4 +1118,3 @@
         <!-- jhipster-needle-maven-add-profile -->
     </profiles>
 </project>
-
