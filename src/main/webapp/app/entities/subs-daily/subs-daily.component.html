@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="viettelApp.sUBS_DAILY.home.title">SUBS DAILIES</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-subs-daily" [routerLink]="['/subs-daily/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="viettelApp.sUBS_DAILY.home.createLabel">
+            Create a new SUBS DAILY
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="sUBS_DAILIES?.length === 0">
+        <span jhiTranslate="viettelApp.sUBS_DAILY.home.notFound">No sUBS_DAILIES found</span>
+    </div>
+    <div class="table-responsive" *ngIf="sUBS_DAILIES?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="systemID"><span jhiTranslate="viettelApp.sUBS_DAILY.systemID">System ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="userID"><span jhiTranslate="viettelApp.sUBS_DAILY.userID">User ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="serviceID"><span jhiTranslate="viettelApp.sUBS_DAILY.serviceID">Service ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="commandCode"><span jhiTranslate="viettelApp.sUBS_DAILY.commandCode">Command Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="info"><span jhiTranslate="viettelApp.sUBS_DAILY.info">Info</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="receiveTime"><span jhiTranslate="viettelApp.sUBS_DAILY.receiveTime">Receive Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isPause"><span jhiTranslate="viettelApp.sUBS_DAILY.isPause">Is Pause</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="chanel"><span jhiTranslate="viettelApp.sUBS_DAILY.chanel">Chanel</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nextChargeDate"><span jhiTranslate="viettelApp.sUBS_DAILY.nextChargeDate">Next Charge Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastChargeDate"><span jhiTranslate="viettelApp.sUBS_DAILY.lastChargeDate">Last Charge Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="price"><span jhiTranslate="viettelApp.sUBS_DAILY.price">Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="offTime"><span jhiTranslate="viettelApp.sUBS_DAILY.offTime">Off Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="offReason"><span jhiTranslate="viettelApp.sUBS_DAILY.offReason">Off Reason</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="typeRegister"><span jhiTranslate="viettelApp.sUBS_DAILY.typeRegister">Type Register</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sUBS_DAILY of sUBS_DAILIES ;trackBy: trackId">
+                <td><a [routerLink]="['/subs-daily', sUBS_DAILY.id, 'view' ]">{{sUBS_DAILY.id}}</a></td>
+                <td>{{sUBS_DAILY.systemID}}</td>
+                <td>{{sUBS_DAILY.userID}}</td>
+                <td>{{sUBS_DAILY.serviceID}}</td>
+                <td>{{sUBS_DAILY.commandCode}}</td>
+                <td>{{sUBS_DAILY.info}}</td>
+                <td>{{sUBS_DAILY.receiveTime}}</td>
+                <td>{{sUBS_DAILY.isPause}}</td>
+                <td>{{sUBS_DAILY.chanel}}</td>
+                <td>{{sUBS_DAILY.nextChargeDate | date:'medium'}}</td>
+                <td>{{sUBS_DAILY.lastChargeDate | date:'medium'}}</td>
+                <td>{{sUBS_DAILY.price}}</td>
+                <td>{{sUBS_DAILY.offTime}}</td>
+                <td>{{sUBS_DAILY.offReason}}</td>
+                <td>{{sUBS_DAILY.typeRegister}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/subs-daily', sUBS_DAILY.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/subs-daily', sUBS_DAILY.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/subs-daily', { outlets: { popup: sUBS_DAILY.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="sUBS_DAILIES?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

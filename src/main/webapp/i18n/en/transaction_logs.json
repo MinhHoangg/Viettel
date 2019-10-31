@@ -1,0 +1,33 @@
+{
+  "viettelApp": {
+    "transaction_logs": {
+      "home": {
+        "title": "Transaction Logs",
+        "createLabel": "Create a new Transaction Logs",
+        "createOrEditLabel": "Create or edit a Transaction Logs",
+        "notFound": "No Transaction Logs found"
+      },
+      "created": "A new Transaction Logs is created with identifier {{ param }}",
+      "updated": "A Transaction Logs is updated with identifier {{ param }}",
+      "deleted": "A Transaction Logs is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaction Logs {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction Logs"
+      },
+      "msisdn": "Msisdn",
+      "cmd": "Cmd",
+      "descriptions": "Descriptions",
+      "price": "Price",
+      "datetime": "Datetime",
+      "result": "Result",
+      "trans_id": "Trans Id",
+      "source": "Source",
+      "sub_type": "Sub Type",
+      "systemid": "Systemid",
+      "serviceid": "Serviceid",
+      "channel": "Channel"
+    }
+  }
+}

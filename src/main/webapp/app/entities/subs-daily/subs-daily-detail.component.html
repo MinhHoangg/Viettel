@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sUBS_DAILY">
+            <h2><span jhiTranslate="viettelApp.sUBS_DAILY.detail.title">SUBS DAILY</span> {{sUBS_DAILY.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.systemID">System ID</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.systemID}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.userID">User ID</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.userID}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.serviceID">Service ID</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.serviceID}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.commandCode">Command Code</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.commandCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.info">Info</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.info}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.receiveTime">Receive Time</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.receiveTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.isPause">Is Pause</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.isPause}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.chanel">Chanel</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.chanel}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.nextChargeDate">Next Charge Date</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.nextChargeDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.lastChargeDate">Last Charge Date</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.lastChargeDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.price">Price</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.price}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.offTime">Off Time</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.offTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.offReason">Off Reason</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.offReason}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.sUBS_DAILY.typeRegister">Type Register</span></dt>
+                <dd>
+                    <span>{{sUBS_DAILY.typeRegister}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/subs-daily', sUBS_DAILY.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-transaction-logs-heading" jhiTranslate="viettelApp.transaction_logs.home.createOrEditLabel">Create or edit a Transaction Logs</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.msisdn" for="field_msisdn">Msisdn</label>
+                    <input type="text" class="form-control" name="msisdn" id="field_msisdn"
+                           formControlName="msisdn"/>
+                    <div *ngIf="editForm.get('msisdn').invalid && (editForm.get('msisdn').dirty || editForm.get('msisdn').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('msisdn').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.cmd" for="field_cmd">Cmd</label>
+                    <input type="text" class="form-control" name="cmd" id="field_cmd"
+                           formControlName="cmd"/>
+                    <div *ngIf="editForm.get('cmd').invalid && (editForm.get('cmd').dirty || editForm.get('cmd').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cmd').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.descriptions" for="field_descriptions">Descriptions</label>
+                    <input type="text" class="form-control" name="descriptions" id="field_descriptions"
+                           formControlName="descriptions"/>
+                    <div *ngIf="editForm.get('descriptions').invalid && (editForm.get('descriptions').dirty || editForm.get('descriptions').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descriptions').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 500 }">
+                        This field cannot be longer than 500 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.price" for="field_price">Price</label>
+                    <input type="number" class="form-control" name="price" id="field_price"
+                           formControlName="price"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.datetime" for="field_datetime">Datetime</label>
+                    <div class="d-flex">
+                        <input id="field_datetime" type="datetime-local" class="form-control" name="datetime" formControlName="datetime" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.result" for="field_result">Result</label>
+                    <input type="number" class="form-control" name="result" id="field_result"
+                           formControlName="result"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.trans_id" for="field_trans_id">Trans Id</label>
+                    <input type="number" class="form-control" name="trans_id" id="field_trans_id"
+                           formControlName="trans_id"/>
+                    <div *ngIf="editForm.get('trans_id').invalid && (editForm.get('trans_id').dirty || editForm.get('trans_id').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('trans_id').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('trans_id')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.source" for="field_source">Source</label>
+                    <input type="text" class="form-control" name="source" id="field_source"
+                           formControlName="source"/>
+                    <div *ngIf="editForm.get('source').invalid && (editForm.get('source').dirty || editForm.get('source').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('source').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.sub_type" for="field_sub_type">Sub Type</label>
+                    <input type="text" class="form-control" name="sub_type" id="field_sub_type"
+                           formControlName="sub_type"/>
+                    <div *ngIf="editForm.get('sub_type').invalid && (editForm.get('sub_type').dirty || editForm.get('sub_type').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('sub_type').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.systemid" for="field_systemid">Systemid</label>
+                    <input type="text" class="form-control" name="systemid" id="field_systemid"
+                           formControlName="systemid"/>
+                    <div *ngIf="editForm.get('systemid').invalid && (editForm.get('systemid').dirty || editForm.get('systemid').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('systemid').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 15 }">
+                        This field cannot be longer than 15 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.serviceid" for="field_serviceid">Serviceid</label>
+                    <input type="text" class="form-control" name="serviceid" id="field_serviceid"
+                           formControlName="serviceid"/>
+                    <div *ngIf="editForm.get('serviceid').invalid && (editForm.get('serviceid').dirty || editForm.get('serviceid').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceid').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 15 }">
+                        This field cannot be longer than 15 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="viettelApp.transaction_logs.channel" for="field_channel">Channel</label>
+                    <input type="text" class="form-control" name="channel" id="field_channel"
+                           formControlName="channel"/>
+                    <div *ngIf="editForm.get('channel').invalid && (editForm.get('channel').dirty || editForm.get('channel').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('channel').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 15 }">
+                        This field cannot be longer than 15 characters.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

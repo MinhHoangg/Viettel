@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transaction_logs">
+            <h2><span jhiTranslate="viettelApp.transaction_logs.detail.title">Transaction Logs</span> {{transaction_logs.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="viettelApp.transaction_logs.msisdn">Msisdn</span></dt>
+                <dd>
+                    <span>{{transaction_logs.msisdn}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.cmd">Cmd</span></dt>
+                <dd>
+                    <span>{{transaction_logs.cmd}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.descriptions">Descriptions</span></dt>
+                <dd>
+                    <span>{{transaction_logs.descriptions}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.price">Price</span></dt>
+                <dd>
+                    <span>{{transaction_logs.price}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.datetime">Datetime</span></dt>
+                <dd>
+                    <span>{{transaction_logs.datetime}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.result">Result</span></dt>
+                <dd>
+                    <span>{{transaction_logs.result}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.trans_id">Trans Id</span></dt>
+                <dd>
+                    <span>{{transaction_logs.trans_id}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.source">Source</span></dt>
+                <dd>
+                    <span>{{transaction_logs.source}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.sub_type">Sub Type</span></dt>
+                <dd>
+                    <span>{{transaction_logs.sub_type}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.systemid">Systemid</span></dt>
+                <dd>
+                    <span>{{transaction_logs.systemid}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.serviceid">Serviceid</span></dt>
+                <dd>
+                    <span>{{transaction_logs.serviceid}}</span>
+                </dd>
+                <dt><span jhiTranslate="viettelApp.transaction_logs.channel">Channel</span></dt>
+                <dd>
+                    <span>{{transaction_logs.channel}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-logs', transaction_logs.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

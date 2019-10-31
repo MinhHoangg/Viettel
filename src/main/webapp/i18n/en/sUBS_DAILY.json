@@ -1,0 +1,35 @@
+{
+  "viettelApp": {
+    "sUBS_DAILY": {
+      "home": {
+        "title": "SUBS DAILIES",
+        "createLabel": "Create a new SUBS DAILY",
+        "createOrEditLabel": "Create or edit a SUBS DAILY",
+        "notFound": "No SUBS DAILIES found"
+      },
+      "created": "A new SUBS DAILY is created with identifier {{ param }}",
+      "updated": "A SUBS DAILY is updated with identifier {{ param }}",
+      "deleted": "A SUBS DAILY is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete SUBS DAILY {{ id }}?"
+      },
+      "detail": {
+        "title": "SUBS DAILY"
+      },
+      "systemID": "System ID",
+      "userID": "User ID",
+      "serviceID": "Service ID",
+      "commandCode": "Command Code",
+      "info": "Info",
+      "receiveTime": "Receive Time",
+      "isPause": "Is Pause",
+      "chanel": "Chanel",
+      "nextChargeDate": "Next Charge Date",
+      "lastChargeDate": "Last Charge Date",
+      "price": "Price",
+      "offTime": "Off Time",
+      "offReason": "Off Reason",
+      "typeRegister": "Type Register"
+    }
+  }
+}

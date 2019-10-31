@@ -587,7 +587,7 @@
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                         <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
-                        <url>jdbc:sqlserver://14.225.7.150;database=CMS</url>
+                        <url>jdbc:sqlserver://14.225.7.150;database=YouclipCMS</url>
                         <defaultSchemaName></defaultSchemaName>
                         <username>youclipcms</username>
                         <password>ycl081mjs</password>

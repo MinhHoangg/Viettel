@@ -45,6 +45,8 @@ public class CacheConfiguration {
             createCache(cm, com.viettel.vn.domain.User.class.getName());
             createCache(cm, com.viettel.vn.domain.Authority.class.getName());
             createCache(cm, com.viettel.vn.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.viettel.vn.domain.SUBS_DAILY.class.getName());
+            createCache(cm, com.viettel.vn.domain.Transaction_logs.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

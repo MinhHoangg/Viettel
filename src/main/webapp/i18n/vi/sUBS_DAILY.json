@@ -1,0 +1,35 @@
+{
+  "viettelApp": {
+    "sUBS_DAILY": {
+      "home": {
+        "title": "SUBS DAILIES",
+        "createLabel": "Thêm mới một SUBS DAILY",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật SUBS DAILY",
+        "notFound": "No SUBS DAILIES found"
+      },
+      "created": "Một SUBS DAILY mới được tạo với định danh {{ param }}",
+      "updated": "Một SUBS DAILY cập nhật với định danh {{ param }}",
+      "deleted": "Một SUBS DAILY đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa SUBS DAILY {{ id }}?"
+      },
+      "detail": {
+        "title": "SUBS DAILY"
+      },
+      "systemID": "System ID",
+      "userID": "User ID",
+      "serviceID": "Service ID",
+      "commandCode": "Command Code",
+      "info": "Info",
+      "receiveTime": "Receive Time",
+      "isPause": "Is Pause",
+      "chanel": "Chanel",
+      "nextChargeDate": "Next Charge Date",
+      "lastChargeDate": "Last Charge Date",
+      "price": "Price",
+      "offTime": "Off Time",
+      "offReason": "Off Reason",
+      "typeRegister": "Type Register"
+    }
+  }
+}

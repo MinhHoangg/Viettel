@@ -1,0 +1,33 @@
+{
+  "viettelApp": {
+    "transaction_logs": {
+      "home": {
+        "title": "Transaction Logs",
+        "createLabel": "Thêm mới một Transaction Logs",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Transaction Logs",
+        "notFound": "No Transaction Logs found"
+      },
+      "created": "Một Transaction Logs mới được tạo với định danh {{ param }}",
+      "updated": "Một Transaction Logs cập nhật với định danh {{ param }}",
+      "deleted": "Một Transaction Logs đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Transaction Logs {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction Logs"
+      },
+      "msisdn": "Msisdn",
+      "cmd": "Cmd",
+      "descriptions": "Descriptions",
+      "price": "Price",
+      "datetime": "Datetime",
+      "result": "Result",
+      "trans_id": "Trans Id",
+      "source": "Source",
+      "sub_type": "Sub Type",
+      "systemid": "Systemid",
+      "serviceid": "Serviceid",
+      "channel": "Channel"
+    }
+  }
+}

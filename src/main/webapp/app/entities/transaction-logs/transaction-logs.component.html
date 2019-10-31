@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="viettelApp.transaction_logs.home.title">Transaction Logs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transaction-logs" [routerLink]="['/transaction-logs/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="viettelApp.transaction_logs.home.createLabel">
+            Create a new Transaction Logs
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="transaction_logs?.length === 0">
+        <span jhiTranslate="viettelApp.transaction_logs.home.notFound">No transaction_logs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="transaction_logs?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="msisdn"><span jhiTranslate="viettelApp.transaction_logs.msisdn">Msisdn</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="cmd"><span jhiTranslate="viettelApp.transaction_logs.cmd">Cmd</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="descriptions"><span jhiTranslate="viettelApp.transaction_logs.descriptions">Descriptions</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="price"><span jhiTranslate="viettelApp.transaction_logs.price">Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="datetime"><span jhiTranslate="viettelApp.transaction_logs.datetime">Datetime</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="result"><span jhiTranslate="viettelApp.transaction_logs.result">Result</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="trans_id"><span jhiTranslate="viettelApp.transaction_logs.trans_id">Trans Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="source"><span jhiTranslate="viettelApp.transaction_logs.source">Source</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sub_type"><span jhiTranslate="viettelApp.transaction_logs.sub_type">Sub Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="systemid"><span jhiTranslate="viettelApp.transaction_logs.systemid">Systemid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="serviceid"><span jhiTranslate="viettelApp.transaction_logs.serviceid">Serviceid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="channel"><span jhiTranslate="viettelApp.transaction_logs.channel">Channel</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transaction_logs of transaction_logs ;trackBy: trackId">
+                <td><a [routerLink]="['/transaction-logs', transaction_logs.id, 'view' ]">{{transaction_logs.id}}</a></td>
+                <td>{{transaction_logs.msisdn}}</td>
+                <td>{{transaction_logs.cmd}}</td>
+                <td>{{transaction_logs.descriptions}}</td>
+                <td>{{transaction_logs.price}}</td>
+                <td>{{transaction_logs.datetime | date:'medium'}}</td>
+                <td>{{transaction_logs.result}}</td>
+                <td>{{transaction_logs.trans_id}}</td>
+                <td>{{transaction_logs.source}}</td>
+                <td>{{transaction_logs.sub_type}}</td>
+                <td>{{transaction_logs.systemid}}</td>
+                <td>{{transaction_logs.serviceid}}</td>
+                <td>{{transaction_logs.channel}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/transaction-logs', transaction_logs.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transaction-logs', transaction_logs.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transaction-logs', { outlets: { popup: transaction_logs.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="transaction_logs?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>
