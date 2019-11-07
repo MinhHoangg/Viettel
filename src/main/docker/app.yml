@@ -11,7 +11,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:sqlserver://viettel-mssql:1433;database=Viettel
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     ports:
-      - 8080:8080
+      - 18080:18080
   viettel-mssql:
     extends:
       file: mssql.yml

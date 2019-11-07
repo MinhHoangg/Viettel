@@ -9,7 +9,7 @@
     "baseName": "Viettel",
     "packageName": "com.viettel.vn",
     "packageFolder": "com/viettel/vn",
-    "serverPort": "8080",
+    "serverPort": "18080",
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
